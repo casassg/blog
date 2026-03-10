@@ -1,0 +1,30 @@
+baseURL: "https://blog.gerard.space/"
+title: "Gerard's Blog"
+disableKinds: ["taxonomy", "term"]
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: false
+
+languages:
+  en:
+    languageCode: "en-us"
+    languageName: "English"
+    weight: 1
+  ca:
+    languageCode: "ca"
+    languageName: "Català"
+    weight: 2
+  es:
+    languageCode: "es"
+    languageName: "Español"
+    weight: 3
+
+pagination:
+  pagerSize: 10
+
+frontmatter:
+  date:
+    - ":filename"
+    - ":default"
+
+permalinks:
+  blog: /:year/:month/:title/
