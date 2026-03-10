@@ -26,5 +26,15 @@ frontmatter:
     - ":filename"
     - ":default"
 
+copyright: "© 2026 Gerard"
+
+services:
+  rss:
+    limit: 100
+
+params:
+  author:
+    name: Gerard
+
 permalinks:
   blog: /:year/:month/:title/

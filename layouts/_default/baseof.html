@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="{{ .Site.Params.color }}">
-    <meta name="author" content="{{ .Site.Params.author }}">
+    <meta name="author" content="{{ .Site.Params.author.name }}">
     <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    {{ with .OutputFormats.Get "rss" -}}
+      {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+    {{- end }}
     <meta name="description" content="{{ default .Site.Params.description .Description | plainify }}">
     <meta name="keywords" content="gerard, boulder, engineer, personal website, gerard casas saez"/>
-    <meta name="copyright" content="{{ .Site.Params.author }}"/>
+    <meta name="copyright" content="{{ .Site.Params.author.name }}"/>
 
     <!--FACEBOOK DESCRIPTION -->
     <meta property="og:title" content="{{ default .Site.Title .Title }}"/>
